@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+        Hello Second Window
+        <br />
+        <span id="label">Hello This Label Will be updated </span>
+    </div>
+    <script>
+        const { ipcRenderer } = require('electron');
+        // When triggered from main process (index.js), do something
+        ipcRenderer.on('update-data', (event, arg)=>{
+            console.log(arg);
+            let label = document.getElementById('label');
+
+            label.innerHTML = arg.msg;
+            label.style.color = arg.color;
+            label.syle.backgroundColor = arg.backgroundColor;
+        });
+    </script>
+  </body>
+</html>

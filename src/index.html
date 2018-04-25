@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+      Hello Window!
+      <br>
+      <input type='text' id='field' value='String to send'/>
+      <input type='button' id='btn' value='Update second page'/>
+    </div>
+    <script>
+      const { ipcRenderer } = require('electron');
+      document.getElementById('btn').addEventListener('click', ()=>{
+        // Data to send to the main process
+        let Data = {
+          msg: document.getElementById('field').value,
+          backgroundColor: 'black',
+          color: 'red'
+        };
+
+        // Trigger event listener action in render process (second.html) from main process
+        ipcRenderer.send('update-second-page', Data);  
+      }, false);
+      
+      
+
+      
+    </script>
+  </body>
+</html>
