@@ -38,7 +38,7 @@ const createWindow = () => {
     parent: mainWindow
   });
 
-  secondWindow.loadURL(`file://${__dirname}/second.html`);
+  secondWindow.loadURL(`file://${__dirname}/src/second.html`);
 };
 
 ipcMain.on('update-second-page', (event, arg)=>{

@@ -14,12 +14,9 @@
         const { ipcRenderer } = require('electron');
         // When triggered from main process (index.js), do something
         ipcRenderer.on('update-data', (event, arg)=>{
-            console.log(arg);
-            let label = document.getElementById('label');
-
-            label.innerHTML = arg.msg;
-            label.style.color = arg.color;
-            label.syle.backgroundColor = arg.backgroundColor;
+            arg.forEach(element => {
+              console.log(element.name);
+            });
         });
     </script>
   </body>
