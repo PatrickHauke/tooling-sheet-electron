@@ -6,7 +6,7 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
   app.quit();
 }
 
-
+const fs = require('fs');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -38,13 +38,28 @@ const createWindow = () => {
     parent: mainWindow
   });
 
-  secondWindow.loadURL(`file://${__dirname}/src/second.html`);
+  secondWindow.loadURL(`file://${__dirname}/render/final.html`);
+
+  
 };
 
 ipcMain.on('update-second-page', (event, arg)=>{
   secondWindow.webContents.send('update-data', arg);
   mainWindow.hide();
   secondWindow.show();
+  secondWindow.webContents.printToPDF(
+    {
+      "marginsType": 1,
+      "pageSize": "Legal",
+      "landscape": true
+    }, (err, data)=>{
+    if(err) throw err;
+    fs.writeFile(__dirname+'/sample-h.pdf', data, (err)=>{
+      if(err){
+        alert('PDF Unable to write', err);
+      }
+    })
+  })
 });
 
 // This method will be called when Electron has finished
