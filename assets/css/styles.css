@@ -1,0 +1,23 @@
+td, th {
+    padding: 5px 5px;
+}
+
+h4.printer {
+    margin: 1.3rem 0 0 0 !important;
+}
+
+h5.printer {
+    margin: 1.0933333333rem 0 .0rem 0 !important;
+}
+
+.clear-icon {
+    background: #fff url('./icons/clear_48px.svg') no-repeat 0px 0px;
+    width: 1.6em;
+}
+
+
+@media only screen and (min-width: 993px){
+    .container {
+        width: 98%;
+    }
+}

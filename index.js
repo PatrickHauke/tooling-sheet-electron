@@ -34,8 +34,7 @@ const createWindow = () => {
   secondWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    show: false,
-    parent: mainWindow
+    show: false
   });
 
   secondWindow.loadURL(`file://${__dirname}/render/final.html`);
@@ -50,11 +49,11 @@ ipcMain.on('update-second-page', (event, arg)=>{
   secondWindow.webContents.printToPDF(
     {
       "marginsType": 1,
-      "pageSize": "Legal",
+      "pageSize": "Letter",
       "landscape": true
     }, (err, data)=>{
     if(err) throw err;
-    fs.writeFile(__dirname+'/sample-h.pdf', data, (err)=>{
+    fs.writeFile(__dirname+'/sample-h-style-98w.pdf', data, (err)=>{
       if(err){
         alert('PDF Unable to write', err);
       }

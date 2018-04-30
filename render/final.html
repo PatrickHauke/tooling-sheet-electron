@@ -10,14 +10,17 @@
     <link rel="stylesheet" href='../assets/css/materialize-1.0.0-beta.min.css'>
     <!--Import Materialize-Stepper CSS (after importing materialize.css) -->
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <style type="text/css" media="print">
+      @page { size: landscape; margin: 0; }
+    </style>
   </head>
   <body>
-    <div class="container" style='zoom:0.8'>
-      <h4 class="light center-align">CNC Lathe Setup</h4>
+    <div class="container render" style='zoom:0.8'>
+      <h4 class="light printer center-align">CNC Lathe Setup</h4>
       <!-- <div class="section"> -->
       <div class="row" style='zoom:0.8'>
-        <div class="col s6">
-          <h5 class="light">
+        <div class="col s4">
+          <h5 class="light printer">
             Operation Description
           </h5>
           <table>
@@ -53,8 +56,8 @@
             </tbody>
           </table>
         </div>
-        <div class="col s6">
-          <h5 class="light">
+        <div class="col s4">
+          <h5 class="light printer">
             Material Description
           </h5> 
           <table>
@@ -82,21 +85,37 @@
             </tbody>
           </table>
         </div>
+        <div class="col s4">
+          <h5 class="light printer">
+            Work Description
+          </h5>
+          <p>
+            Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc
+          </p>
+          <hr/>
+          <h5 class="light printer">
+            Comments/Suggestions
+          </h5>
+          <p>
+            Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc
+          </p>
+        </div>
+
       </div>
     
       <!-- Work Description Render -->
-      <div class="row" style='zoom:0.8'>
-        <h5 class="light">
+      <!-- <div class="row" style='zoom:0.8'>
+        <h5 class="light printer">
           Work Description
         </h5>
         <p>
           Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc
         </p>
-      </div>
+      </div> -->
 
       <!-- Work Offsets Render -->
-      <div class="row">
-        <h5 class="light">
+      <div class="row" style='zoom:0.8'>
+        <h5 class="light printer">
           Work Offsets
         </h5>
         <table>
@@ -117,22 +136,22 @@
                 <b>X</b>
               </td>
               <td>
-                <p>sample</p>
+                sample
               </td>
               <td>
-                <p>sample</p>
+                sample
               </td>
               <td>
-                <p>sample</p>
+                sample
               </td>
               <td>
-                <p>sample</p>
+                sample
               </td>
               <td>
-                <p>sample</p>
+                sample
               </td>
               <td>
-                <p>sample</p>
+                sample
               </td>
             </tr>
             <tr>
@@ -140,22 +159,22 @@
                 <b>Y</b>
               </td>
               <td>
-                <p>sample</p>
+                sample
               </td>
               <td>
-                <p>sample</p>
+                sample
               </td>
               <td>
-                <p>sample</p>
+                sample
               </td>
               <td>
-                <p>sample</p>
+                sample
               </td>
               <td>
-                <p>sample</p>
+                sample
               </td>
               <td>
-                <p>sample</p>
+                sample
               </td>
             </tr>
           </tbody>
@@ -164,7 +183,7 @@
 
       <!-- Main Spindle Table Render -->
       <div class="row" style='zoom:0.8'>
-        <h5 class="light">
+        <h5 class="light printer">
           Main Spindle
         </h5>
         <table class='centered'>
@@ -197,7 +216,7 @@
 
       <!-- Sub Spindle Table Render -->
       <div class="row" style='zoom:0.8'>
-        <h5 class="light">
+        <h5 class="light printer">
           Sub Spindle
         </h5>
         <table class='centered'>
@@ -213,7 +232,7 @@
               <th>T</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id='subSpindle'>
             <tr>
               <td>1</td>
               <td>2</td>
@@ -229,34 +248,42 @@
       </div>
      
       <!-- Work Description Render -->
-      <div class="row" style='zoom:0.8'>
-        <h5 class="light">
+      <!-- <div class="row" style='zoom:0.8'>
+        <h5 class="light printer">
           Comments/Suggestions
         </h5>
         <p>
           Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc
         </p>
-      </div>
+      </div> -->
     </div>
+    <script>window.$ = window.jQuery = require('../assets/js/jquery-3.3.1.min.js');</script>
     <script>
         const { ipcRenderer } = require('electron');
         // When triggered from main process (index.js), do something
         ipcRenderer.on('update-data', (event, arg)=>{
+            let renderBlock = $('.render');
+            /* Clean up the data to make it easier to render */
+            let spindleArr = [], subspindleArr = [];
             arg.forEach(element => {
-              console.log(element.name);
+              if(element.name.includes('spindle_')){
+                // console.log(element);
+                spindleArr.push(element);
+              } 
+              else if (element.name.includes('sub_')){
+                console.log('sub');
+              }
             });
+            // console.log(spindleArr);
+            
+            // $('#subSpindle').append()
+            spindleArr.forEach((data=>{
+              console.log(data);
+            }))
+            
         });
 
-        // function ready(e) {
-        //   if(document.readyState !== 'loading'){
-        //     e();
-        //   } else {
-        //     document.addEventListener('DOMContentLoaded', e);
-        //   }
-        // }
-        // ready(()=>{
-        //   window.print();
-        // })
+        
     </script>
   </body>
 </html>
