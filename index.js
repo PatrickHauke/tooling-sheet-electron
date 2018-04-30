@@ -1,12 +1,13 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, shell } from 'electron';
 // Setup inter-process-communication
 const {ipcMain} = require('electron');
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
   app.quit();
 }
-
+const path = require('path');
 const fs = require('fs');
+const os = require('os');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -45,20 +46,26 @@ ipcMain.on('update-second-page', (event, arg)=>{
   mainWindow.hide();
   secondWindow.show();
   secondWindow.maximize();
-  secondWindow.webContents.printToPDF(
-    {
-      "marginsType": 1,
-      "pageSize": "Legal",
-      "landscape": true
-    }, (err, data)=>{
-    if(err) throw err;
-    fs.writeFile(__dirname+'/sample-h.pdf', data, (err)=>{
-      if(err){
-        alert('PDF Unable to write', err);
-      }
+});
+
+ipcMain.on('final-form-rendered', (event, arg)=>{
+  const pdfPath = path.join(os.tmpdir(), 'pdf-sample.pdf');
+  const renderWindow = BrowserWindow.fromWebContents(event.sender);
+
+  renderWindow.webContents.printToPDF({
+    "marginsType": 1,
+    "pageSize": "Legal",
+    "landscape": true
+  }, (err, data)=>{
+    if(err) return console.log(err.message);
+
+    fs.writeFile(pdfPath, data, function(err) {
+      if(err) return console.log(err.message);
+      shell.openExternal('file://'+ pdfPath);
+      event.sender.send('pdf-written', pdfPath);
     })
   })
-});
+})
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

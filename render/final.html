@@ -12,252 +12,733 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
   </head>
   <body>
-    <div class="container" style='zoom:0.8'>
-      <h4 class="light center-align">CNC Lathe Setup</h4>
-      <!-- <div class="section"> -->
-      <div class="row" style='zoom:0.8'>
-        <div class="col s6">
-          <h5 class="light">
-            Operation Description
-          </h5>
-          <table>
-            <tbody>
-              <tr>
-                <td>Customer:</td>
-                <td>Sample</td>
-              </tr>
-              <tr>
-                <td>Operation Date:</td>
-                <td>Apr 26, 2018</td>
-              </tr>
-              <tr>
-                <td>Part Name:</td>
-                <td>123-sample</td>
-              </tr>
-              <tr>
-                <td>Part Number:</td>
-                <td>123-sample</td>
-              </tr>
-              <tr>
-                <td>Program Number:</td>
-                <td>123-sample</td>
-              </tr>
-              <tr>
-                <td>Operation Number:</td>
-                <td>123-sample</td>
-              </tr>
-              <tr>
-                <td>Machine Name:</td>
-                <td>123-sample</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="col s6">
-          <h5 class="light">
-            Material Description
-          </h5> 
-          <table>
-            <tbody>
-              <tr>
-                <td>Material:</td>
-                <td>Sample</td>
-              </tr>
-              <tr>
-                <td>Stock Diameter:</td>
-                <td>Apr 26, 2018</td>
-              </tr>
-              <tr>
-                <td>Feeding Method:</td>
-                <td>123-sample</td>
-              </tr>
-              <tr>
-                <td>Feeding Length:</td>
-                <td>123-sample</td>
-              </tr>
-              <tr>
-                <td>Infeed Length:</td>
-                <td>123-sample</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    
-      <!-- Work Description Render -->
-      <div class="row" style='zoom:0.8'>
-        <h5 class="light">
-          Work Description
-        </h5>
-        <p>
-          Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc
-        </p>
+      <!-- style='zoom:0.8' -->
+    <div class="render" style='zoom: 0.8'> 
+      
       </div>
 
-      <!-- Work Offsets Render -->
-      <div class="row">
-        <h5 class="light">
-          Work Offsets
-        </h5>
-        <table>
-          <thead>
-            <tr>
-              <th>&nbsp;</th>
-              <th>G54</th>
-              <th>G55</th>
-              <th>G56</th>
-              <th>G57</th>
-              <th>G58</th>
-              <th>G59</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <b>X</b>
-              </td>
-              <td>
-                <p>sample</p>
-              </td>
-              <td>
-                <p>sample</p>
-              </td>
-              <td>
-                <p>sample</p>
-              </td>
-              <td>
-                <p>sample</p>
-              </td>
-              <td>
-                <p>sample</p>
-              </td>
-              <td>
-                <p>sample</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <b>Y</b>
-              </td>
-              <td>
-                <p>sample</p>
-              </td>
-              <td>
-                <p>sample</p>
-              </td>
-              <td>
-                <p>sample</p>
-              </td>
-              <td>
-                <p>sample</p>
-              </td>
-              <td>
-                <p>sample</p>
-              </td>
-              <td>
-                <p>sample</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Main Spindle Table Render -->
-      <div class="row" style='zoom:0.8'>
-        <h5 class="light">
-          Main Spindle
-        </h5>
-        <table class='centered'>
-          <thead>
-            <tr>
-              <th>Seq</th>
-              <th>Tool</th>
-              <th>Type</th>
-              <th>Tip Radius</th>
-              <th>Insert Grade</th>
-              <th>Offset</th>
-              <th>Operation</th>
-              <th>T</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td>6</td>
-              <td>7</td>
-              <td>8</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Sub Spindle Table Render -->
-      <div class="row" style='zoom:0.8'>
-        <h5 class="light">
-          Sub Spindle
-        </h5>
-        <table class='centered'>
-          <thead>
-            <tr>
-              <th>Seq</th>
-              <th>Tool</th>
-              <th>Type</th>
-              <th>Tip Radius</th>
-              <th>Insert Grade</th>
-              <th>Offset</th>
-              <th>Operation</th>
-              <th>T</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td>6</td>
-              <td>7</td>
-              <td>8</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-     
-      <!-- Work Description Render -->
-      <div class="row" style='zoom:0.8'>
-        <h5 class="light">
-          Comments/Suggestions
-        </h5>
-        <p>
-          Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc Sample Desc
-        </p>
-      </div>
-    </div>
+    <script>window.$ = window.jQuery = require('../assets/js/jquery-3.3.1.min.js');</script>
     <script>
         const { ipcRenderer } = require('electron');
-        // When triggered from main process (index.js), do something
+               
         ipcRenderer.on('update-data', (event, arg)=>{
-            console.log(arg);
-            // arg.forEach(element => {
-            //   console.log(element.name);
-            // });
+          console.log(arg);
+          $('.render').append(`
+          <h4 class="light center-align">CNC Lathe Setup</h4>
+          <div class="row">
+                <div class="col s4">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Customer: </td>
+                                <td>
+                                    ${arg[0].value}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Operation Date: </td>
+                                <td>
+                                    ${arg[1].value}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Part Name/ Number: </td>
+                                <td>
+                                    ${arg[2].value}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Operation Number: </td>
+                                <td>
+                                    ${arg[3].value}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Machine Name</td>
+                                <td>
+                                    ${arg[4].value}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Center Text Inputs -->
+                <div class="col s4">
+                    <div style='border: 1px solid darkgray;'>
+                        <!-- <label for='work_desc'>Work Description</label> -->
+                        <p style='border-bottom: 1px solid darkgray !important; padding-left:1rem; padding-bottom:.5rem;'>Work Description</p>
+                        <p>${arg[5].value}</p>
+                    </div>
+                    <!-- <br>
+                    <br> -->
+                    <div style='border: 1px solid darkgray;'>
+                        <!-- <label for="comments_desc">Comments & Suggestions</label> -->
+                        <p style='border-bottom: 1px solid darkgray !important; padding-left:1rem; padding-bottom:.5rem;'>Comments & Suggestions</p>
+                        <p>${arg[6].value}</p>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Material: </td>
+                                <td>
+                                    ${arg[7].value}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Diameter: </td>
+                                <td>
+                                    ${arg[8].value}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Feeding Method: </td>
+                                <td>
+                                    ${arg[9].value}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Feeding Length: </td>
+                                <td>
+                                    ${arg[10].value}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Infeed Length: </td>
+                                <td>
+                                    ${arg[11].value}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        <!-- </div> -->
+        <!-- End Form config -->
+
+        <!-- Work Offset -->
+        <!-- <div class="section"> -->
+            <div class="row">
+                <div class="col s2 center-align" style='padding-top: 1.5rem;'>
+                    Work Offset:
+                </div>
+                <div class="col s10">
+                    <table id="work_offset" class="work-offset centered">
+                        <thead>
+                            <tr>
+                            <th>&nbsp;&nbsp;&nbsp;</th>
+                            <th>G54</th>
+                            <th>G55</th>
+                            <th>G56</th>
+                            <th>G57</th>
+                            <th>G58</th>
+                            <th>G59</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>
+                                <b>X</b>
+                            </td>
+                            <td>
+                                ${arg[12].value}
+                            </td>
+                            <td>
+                                ${arg[13].value}
+                            </td>
+                            <td>
+                                ${arg[14].value}
+                            </td>
+                            <td>
+                                ${arg[15].value}
+                            </td>
+                            <td>
+                                ${arg[16].value}
+                            </td>
+                            <td>
+                                ${arg[17].value}
+                            </td>
+                            </tr>
+                            <tr>
+                            <td>
+                                <b>Z</b>
+                            </td>
+                            <td>
+                                ${arg[18].value}
+                            </td>
+                            <td>
+                                ${arg[19].value}
+                            </td>
+                            <td>
+                                ${arg[20].value}
+                            </td>
+                            <td>
+                                ${arg[21].value}
+                            </td>
+                            <td>
+                                ${arg[22].value}
+                            </td>
+                            <td>
+                                ${arg[23].value}
+                            </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        <!-- </div> -->
+
+        <!-- Spindle Table -->
+        <div class="row">
+            <h6 class="light">Main Spindle</h6>
+            <table id="spindle_table" class="spindle-table">
+                <thead>
+                    <tr>
+                    <th>Seq</th>
+                    <th>Tool</th>
+                    <th>Type</th>
+                    <th>Tip Radius</th>
+                    <th>Insert Grade</th>
+                    <th>Offset</th>
+                    <th>Operation</th>
+                    <th>T</th>
+                    <!-- <th>Action</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr class="row">
+                    <td>
+                        ${arg[24].value}
+                    </td>
+                    <td>
+                        ${arg[25].value}
+                    </td>
+                    <td>
+                        ${arg[26].value}
+                    </td>
+                    <td>
+                        ${arg[27].value}
+                    </td>
+                    <td>
+                        ${arg[28].value}
+                    </td>
+                    <td>
+                        ${arg[29].value}
+                    </td>
+                    <td>
+                        ${arg[30].value}
+                    </td>
+                    <td>
+                        ${arg[31].value}
+                    </td>
+                  <tr>
+                  <tr class="row">
+                    <td>
+                        ${arg[32].value}
+                    </td>
+                    <td>
+                        ${arg[33].value}
+                    </td>
+                    <td>
+                        ${arg[34].value}
+                    </td>
+                    <td>
+                        ${arg[35].value}
+                    </td>
+                    <td>
+                        ${arg[36].value}
+                    </td>
+                    <td>
+                        ${arg[37].value}
+                    </td>
+                    <td>
+                        ${arg[38].value}
+                    </td>
+                    <td>
+                        ${arg[39].value}
+                    </td>
+                  <tr>
+                  <tr class="row">
+                    <td>
+                        ${arg[40].value}
+                    </td>
+                    <td>
+                        ${arg[41].value}
+                    </td>
+                    <td>
+                        ${arg[42].value}
+                    </td>
+                    <td>
+                        ${arg[43].value}
+                    </td>
+                    <td>
+                        ${arg[44].value}
+                    </td>
+                    <td>
+                        ${arg[45].value}
+                    </td>
+                    <td>
+                        ${arg[46].value}
+                    </td>
+                    <td>
+                        ${arg[47].value}
+                    </td>
+                  <tr>
+                  <tr class="row">
+                    <td>
+                        ${arg[48].value}
+                    </td>
+                    <td>
+                        ${arg[49].value}
+                    </td>
+                    <td>
+                        ${arg[50].value}
+                    </td>
+                    <td>
+                        ${arg[51].value}
+                    </td>
+                    <td>
+                        ${arg[52].value}
+                    </td>
+                    <td>
+                        ${arg[53].value}
+                    </td>
+                    <td>
+                        ${arg[54].value}
+                    </td>
+                    <td>
+                        ${arg[55].value}
+                    </td>
+                  <tr>
+                  <tr class="row">
+                    <td>
+                        ${arg[56].value}
+                    </td>
+                    <td>
+                        ${arg[57].value}
+                    </td>
+                    <td>
+                        ${arg[58].value}
+                    </td>
+                    <td>
+                        ${arg[59].value}
+                    </td>
+                    <td>
+                        ${arg[60].value}
+                    </td>
+                    <td>
+                        ${arg[61].value}
+                    </td>
+                    <td>
+                        ${arg[62].value}
+                    </td>
+                    <td>
+                        ${arg[63].value}
+                    </td>
+                  <tr>
+                      <tr class="row">
+                    <td>
+                        ${arg[64].value}
+                    </td>
+                    <td>
+                        ${arg[65].value}
+                    </td>
+                    <td>
+                        ${arg[66].value}
+                    </td>
+                    <td>
+                        ${arg[67].value}
+                    </td>
+                    <td>
+                        ${arg[68].value}
+                    </td>
+                    <td>
+                        ${arg[69].value}
+                    </td>
+                    <td>
+                        ${arg[70].value}
+                    </td>
+                    <td>
+                        ${arg[71].value}
+                    </td>
+                  <tr>
+                      <tr class="row">
+                    <td>
+                        ${arg[72].value}
+                    </td>
+                    <td>
+                        ${arg[73].value}
+                    </td>
+                    <td>
+                        ${arg[74].value}
+                    </td>
+                    <td>
+                        ${arg[75].value}
+                    </td>
+                    <td>
+                        ${arg[76].value}
+                    </td>
+                    <td>
+                        ${arg[77].value}
+                    </td>
+                    <td>
+                        ${arg[78].value}
+                    </td>
+                    <td>
+                        ${arg[79].value}
+                    </td>
+                  <tr>
+                      <tr class="row">
+                    <td>
+                        ${arg[80].value}
+                    </td>
+                    <td>
+                        ${arg[81].value}
+                    </td>
+                    <td>
+                        ${arg[82].value}
+                    </td>
+                    <td>
+                        ${arg[83].value}
+                    </td>
+                    <td>
+                        ${arg[84].value}
+                    </td>
+                    <td>
+                        ${arg[85].value}
+                    </td>
+                    <td>
+                        ${arg[86].value}
+                    </td>
+                    <td>
+                        ${arg[87].value}
+                    </td>
+                  <tr>
+                      <tr class="row">
+                    <td>
+                        ${arg[88].value}
+                    </td>
+                    <td>
+                        ${arg[89].value}
+                    </td>
+                    <td>
+                        ${arg[90].value}
+                    </td>
+                    <td>
+                        ${arg[91].value}
+                    </td>
+                    <td>
+                        ${arg[92].value}
+                    </td>
+                    <td>
+                        ${arg[93].value}
+                    </td>
+                    <td>
+                        ${arg[94].value}
+                    </td>
+                    <td>
+                        ${arg[95].value}
+                    </td>
+                  <tr>
+                      <tr class="row">
+                    <td>
+                        ${arg[96].value}
+                    </td>
+                    <td>
+                        ${arg[97].value}
+                    </td>
+                    <td>
+                        ${arg[98].value}
+                    </td>
+                    <td>
+                        ${arg[99].value}
+                    </td>
+                    <td>
+                        ${arg[100].value}
+                    </td>
+                    <td>
+                        ${arg[101].value}
+                    </td>
+                    <td>
+                        ${arg[102].value}
+                    </td>
+                    <td>
+                        ${arg[103].value}
+                    </td>
+                  <tr>
+                      <tr class="row">
+                    
+                    <td>
+                        ${arg[104].value}
+                    </td>
+                    <td>
+                        ${arg[105].value}
+                    </td>
+                    <td>
+                        ${arg[106].value}
+                    </td>
+                    <td>
+                        ${arg[107].value}
+                    </td>
+                    <td>
+                        ${arg[108].value}
+                    </td>
+                    <td>
+                        ${arg[109].value}
+                    </td>
+                    <td>
+                        ${arg[110].value}
+                    </td>
+                    <td>
+                        ${arg[111].value}
+                    </td>
+                  <tr>
+                      <tr class="row">
+                    
+                    <td>
+                        ${arg[112].value}
+                    </td>
+                    <td>
+                        ${arg[113].value}
+                    </td>
+                    <td>
+                        ${arg[114].value}
+                    </td>
+                    <td>
+                        ${arg[115].value}
+                    </td>
+                    <td>
+                        ${arg[116].value}
+                    </td>
+                    <td>
+                        ${arg[117].value}
+                    </td>
+                    <td>
+                        ${arg[118].value}
+                    </td>
+                    <td>
+                        ${arg[119].value}
+                    </td>
+                  <tr>
+                      <tr class="row">
+                    
+                    <td>
+                        ${arg[120].value}
+                    </td>
+                    <td>
+                        ${arg[121].value}
+                    </td>
+                    <td>
+                        ${arg[122].value}
+                    </td>
+                    <td>
+                        ${arg[123].value}
+                    </td>
+                    <td>
+                        ${arg[124].value}
+                    </td>
+                    <td>
+                        ${arg[125].value}
+                    </td>
+                    <td>
+                        ${arg[126].value}
+                    </td>
+                    <td>
+                        ${arg[127].value}
+                    </td>
+                  <tr>
+                      <tr class="row">
+                    
+                    <td>
+                        ${arg[128].value}
+                    </td>
+                    <td>
+                        ${arg[129].value}
+                    </td>
+                    <td>
+                        ${arg[130].value}
+                    </td>
+                    <td>
+                        ${arg[131].value}
+                    </td>
+                    <td>
+                        ${arg[132].value}
+                    </td>
+                    <td>
+                        ${arg[133].value}
+                    </td>
+                    <td>
+                        ${arg[134].value}
+                    </td>
+                    <td>
+                        ${arg[135].value}
+                    </td>
+                  <tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row">
+            <h6 class="light">Sub Spindle</h6>
+            <table id="subspindle_table" class="spindle-table">
+                <thead>
+                    <tr>
+                        <th>Seq</th>
+                        <th>Tool</th>
+                        <th>Type</th>
+                        <th>Tip Radius</th>
+                        <th>Insert Grade</th>
+                        <th>Offset</th>
+                        <th>Operation</th>
+                        <th>T</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr class="row">
+                    <td>
+                        ${arg[136].value}
+                    </td>
+                    <td>
+                        ${arg[137].value}
+                    </td>
+                    <td>
+                        ${arg[138].value}
+                    </td>
+                    <td>
+                        ${arg[139].value}
+                    </td>
+                    <td>
+                        ${arg[140].value}
+                    </td>
+                    <td>
+                        ${arg[141].value}
+                    </td>
+                    <td>
+                        ${arg[142].value}
+                    </td>
+                    <td>
+                        ${arg[143].value}
+                    </td>
+                  <tr>
+                      <tr class="row">
+                    <td>
+                        ${arg[144].value}
+                    </td>
+                    <td>
+                        ${arg[145].value}
+                    </td>
+                    <td>
+                        ${arg[146].value}
+                    </td>
+                    <td>
+                        ${arg[147].value}
+                    </td>
+                    <td>
+                        ${arg[148].value}
+                    </td>
+                    <td>
+                        ${arg[149].value}
+                    </td>
+                    <td>
+                        ${arg[150].value}
+                    </td>
+                    <td>
+                        ${arg[151].value}
+                    </td>
+                  <tr>
+                      <tr class="row">
+                    
+                    <td>
+                        ${arg[152].value}
+                    </td>
+                    <td>
+                        ${arg[153].value}
+                    </td>
+                    <td>
+                        ${arg[154].value}
+                    </td>
+                    <td>
+                        ${arg[155].value}
+                    </td>
+                    <td>
+                        ${arg[156].value}
+                    </td>
+                    <td>
+                        ${arg[157].value}
+                    </td>
+                    <td>
+                        ${arg[158].value}
+                    </td>
+                    <td>
+                        ${arg[159].value}
+                    </td>
+                  <tr>
+                      <tr class="row">
+                    <td>
+                        ${arg[160].value}
+                    </td>
+                    <td>
+                        ${arg[161].value}
+                    </td>
+                    <td>
+                        ${arg[162].value}
+                    </td>
+                    <td>
+                        ${arg[163].value}
+                    </td>
+                    <td>
+                        ${arg[164].value}
+                    </td>
+                    <td>
+                        ${arg[165].value}
+                    </td>
+                    <td>
+                        ${arg[166].value}
+                    </td>
+                    <td>
+                        ${arg[167].value}
+                    </td>
+                  <tr>
+                      <tr class="row">
+                    
+                    <td>
+                        ${arg[168].value}
+                    </td>
+                    <td>
+                        ${arg[169].value}
+                    </td>
+                    <td>
+                        ${arg[170].value}
+                    </td>
+                    <td>
+                        ${arg[171].value}
+                    </td>
+                    <td>
+                        ${arg[172].value}
+                    </td>
+                    <td>
+                        ${arg[173].value}
+                    </td>
+                    <td>
+                        ${arg[174].value}
+                    </td>
+                    <td>
+                        ${arg[175].value}
+                    </td>
+                  <tr>
+                </tbody>
+              </table>
+            </div>
+          `);
+          ipcRenderer.send('final-form-rendered');
         });
 
-        // function ready(e) {
-        //   if(document.readyState !== 'loading'){
-        //     e();
-        //   } else {
-        //     document.addEventListener('DOMContentLoaded', e);
-        //   }
-        // }
-        // ready(()=>{
-        //   window.print();
+        // ipcs.on('pdf-written', (event, path)=>{
+        //     const messag
         // })
+        
+        
     </script>
   </body>
 </html>

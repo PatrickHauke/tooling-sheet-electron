@@ -3,10 +3,30 @@ document.getElementById('render').addEventListener('click', () => {
     const spindleData = $('.hook');
     let dataSet = [];
     for(var i = 0; i<spindleData.length; i++){
-        dataSet.push({
+        if(spindleData[i].value.length === 0) spindleData[i].value = '&nbsp';
+        if(spindleData[i].name.startsWith('main')){
+            dataSet.push({
+                'name': spindleData[i].name,
+                'value': spindleData[i].value,
+                'render': 1
+            });
+        } 
+        else if(spindleData[i].name.startsWith('sub')){
+            dataSet.push({
+                'name': spindleData[i].name,
+                'value': spindleData[i].value,
+                'render': 2
+            });
+        }
+        
+        // default for all other questions
+        else 
+            dataSet.push({
             'name': spindleData[i].name,
-            'value': spindleData[i].value
-        });
+            'value': spindleData[i].value,
+            'render': 0
+        })
+        
     }
 
     // console.log(dataSet);
