@@ -4,7 +4,7 @@
 
 td, th {
     padding: 0px !important;
-    border: 1px solid darkgray;
+    border: 1px solid black;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
 }
@@ -31,4 +31,8 @@ textarea {
 .render {
     width: 99%;
     padding-left: 1.7rem;
+}
+
+.datepicker-date-display {
+    background-color: #ff9100;
 }

@@ -26,3 +26,14 @@
             .append(`<td><input class="col  hook" name="sub_t_desc_${subCt}" id="t_desc" type="text"/></td>`)
     }
 })();
+
+
+var elem = document.querySelector('.datepicker');
+var options = {};
+var instance = M.Datepicker.init(elem, options);
+// Or with jQuery
+
+$(document).ready(function(){
+  $('.datepicker').datepicker();
+});
+        

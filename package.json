@@ -20,29 +20,12 @@
         "win32": [
           "squirrel"
         ],
-        "darwin": [
-          "zip"
-        ],
-        "linux": [
-          "deb",
-          "rpm"
-        ]
+        "darwin": [],
+        "linux": []
       },
-      "electronPackagerConfig": {
-        "packageManager": "yarn"
-      },
-      "electronWinstallerConfig": {
-        "name": "tooling_sheet_electron"
-      },
-      "electronInstallerDebian": {},
-      "electronInstallerRedhat": {},
       "github_repository": {
         "owner": "",
         "name": ""
-      },
-      "windowsStoreConfig": {
-        "packageName": "",
-        "name": "toolingsheetelectron"
       }
     }
   },
