@@ -16,15 +16,14 @@ let secondWindow;
 const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
     show: false
   });
 
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
+  mainWindow.loadURL(`file://${__dirname}/setup.html`);
 
   mainWindow.once('ready-to-show', ()=>{
     mainWindow.show()
+    mainWindow.maximize()
   })
 
   mainWindow.on('closed', ()=>{
@@ -32,10 +31,8 @@ const createWindow = () => {
   })
 
   secondWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
     show: false,
-    parent: mainWindow
+    // parent: mainWindow
   });
 
   secondWindow.loadURL(`file://${__dirname}/render/final.html`);
@@ -47,6 +44,7 @@ ipcMain.on('update-second-page', (event, arg)=>{
   secondWindow.webContents.send('update-data', arg);
   mainWindow.hide();
   secondWindow.show();
+  secondWindow.maximize();
   secondWindow.webContents.printToPDF(
     {
       "marginsType": 1,

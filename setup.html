@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Materializecss compiled and minified CSS -->
+    <link rel="stylesheet" href='assets/css/materialize-1.0.0-beta.min.css'>
+    <!--Import Materialize-Stepper CSS (after importing materialize.css) -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h4 class="light center-align">CNC Lathe Setup</h4>
+        <form>
+            <!-- Form configuration -->
+            <!-- <div class="section"> -->
+                <div class="row">
+                    <div class="col s4">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Customer: </td>
+                                    <td>
+                                        <input type="text" placeholder="Material" class="hook" id="customer">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Operation Date: </td>
+                                    <td>
+                                        <input class='hook' type="text" name='date' class="datepicker" id="date">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Part Name/ Number: </td>
+                                    <td>
+                                        <input class='hook' placeholder="Part Name/Num" name='part_name' id="part_name" type="text">
+                                    </td>
+                                </tr>
+                                <!-- <tr>
+                                    <td>Part Number: </td>
+                                    <td>
+                                        <input class='hook' placeholder="Part Number" name='part_number' id="part_number" type="text">
+                                    </td>
+                                </tr> -->
+                                <tr>
+                                    <td>Operation Number: </td>
+                                    <td>
+                                        <input class='hook' placeholder="Operation Number" name='operation_number' id="operation_number" type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Machine Name</td>
+                                    <td>
+                                        <input class='hook' placeholder="Machine" name='machine_name' id="machine_name" type="text">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Center Text Inputs -->
+                    <div class="col s4">
+                        <div style='border: 1px solid darkgray;'>
+                            <!-- <label for='work_desc'>Work Description</label> -->
+                            <p>Work Description</p>
+                            <textarea rows='4' id='work_desc' name='work_desc' class='hook hook-by'></textarea>
+                        </div>
+                        <!-- <br>
+                        <br> -->
+                        <div style='border: 1px solid darkgray;'>
+                            <!-- <label for="comments_desc">Comments & Suggestions</label> -->
+                            <p>Comments & Suggestions</p>
+                            <textarea rows='4' name='comments_desc' id="comments_desc" class="hook hook-by"></textarea>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Material: </td>
+                                    <td>
+                                        <input class='hook' placeholder="Material" name='material' id="material" type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Diameter: </td>
+                                    <td>
+                                        <input class='hook' placeholder="Diameter" name='diameter' id="diameter" type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Feeding Method: </td>
+                                    <td>
+                                        <input class='hook' placeholder="Method" name='feeding_method' id="feeding_method" type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Feeding Length: </td>
+                                    <td>
+                                        <input class='hook' placeholder="Feeding Length" name='feeding_length' id="feeding_length" type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Infeed Length: </td>
+                                    <td>
+                                        <input class='hook' placeholder="Infeed Length" name='infeed_length' id="infeed_length" type="text">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            <!-- </div> -->
+            <!-- End Form config -->
+
+            <!-- Work Offset -->
+            <!-- <div class="section"> -->
+                <div class="row">
+                    <div class="col s2 center-align" style='padding-top: 3rem;'>
+                        Work Offset:
+                    </div>
+                    <div class="col s10">
+                        <table id="work_offset" class="work-offset centered">
+                            <thead>
+                                <tr>
+                                <th>&nbsp;&nbsp;&nbsp;</th>
+                                <th>G54</th>
+                                <th>G55</th>
+                                <th>G56</th>
+                                <th>G57</th>
+                                <th>G58</th>
+                                <th>G59</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td>
+                                    <b>X</b>
+                                </td>
+                                <td>
+                                    <input class="center-align hook" name="x_g54" id="xg54" type="text" />
+                                </td>
+                                <td>
+                                    <input class="center-align hook" name="x_g55" id="xg55" type="text" />
+                                </td>
+                                <td>
+                                    <input class="center-align hook" name="x_g56" id="xg56" type="text" />
+                                </td>
+                                <td>
+                                    <input class="center-align hook" name="x_g57" id="xg57" type="text" />
+                                </td>
+                                <td>
+                                    <input class="center-align hook" name="x_g58" id="xg58" type="text" />
+                                </td>
+                                <td>
+                                    <input class="center-align hook" name="x_g59" id="xg59" type="text" />
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                    <b>Z</b>
+                                </td>
+                                <td>
+                                    <input class="center-align hook" name="z_g54" id="zg54" type="text" />
+                                </td>
+                                <td>
+                                    <input class="center-align hook" name="z_g55" id="zg55" type="text" />
+                                </td>
+                                <td>
+                                    <input class="center-align hook" name="z_g56" id="zg56" type="text" />
+                                </td>
+                                <td>
+                                    <input class="center-align hook" name="z_g57" id="zg57" type="text" />
+                                </td>
+                                <td>
+                                    <input class="center-align hook" name="z_g58" id="zg58" type="text" />
+                                </td>
+                                <td>
+                                    <input class="center-align hook" name="z_g59" id="zg59" type="text" />
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            <!-- </div> -->
+
+            <!-- Spindle Table -->
+            <div class="row">
+                <h6 class="light">Main Spindle</h6>
+                <table id="spindle_table" class="spindle-table">
+                    <thead>
+                        <tr>
+                        <th>Seq</th>
+                        <th>Tool</th>
+                        <th>Type</th>
+                        <th>Tip Radius</th>
+                        <th>Insert Grade</th>
+                        <th>Offset</th>
+                        <th>Operation</th>
+                        <th>T</th>
+                        <!-- <th>Action</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row">
+                            <td>
+                                <input class="col hook" name="seq_0" id="seq" type="text" />
+                            </td>
+                            <td>
+                                <input class="col  hook" name="tool_0" id="tool" type="text" />
+                            </td>
+                            <td>
+                                <input class="col  hook" name="type_0" id="type" type="text" />
+                            </td>
+                            <td>
+                                <input class="col  hook" name="tip_rad_0" id="tip_rad" type="text" />
+                            </td>
+                            <td>
+                                <input class="col  hook" name="ins_grade_0" id="ins_grade" type="text" />
+                            </td>
+                            <td>
+                                <input class="col  hook" name="offset_0" id="offset" type="text" />
+                            </td>
+                            <td>
+                                <input class="col  hook" name="op_desc_0" id="op_desc" type="text" />
+                            </td>
+                            <td>
+                                <input class="col  hook" name="t_desc_0" id="t_desc" type="text" />
+                            </td>
+                        <tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <h6 class="light">Sub Spindle</h6>
+                <table id="subspindle_table" class="spindle-table">
+                    <thead>
+                        <tr>
+                            <th>Seq</th>
+                            <th>Tool</th>
+                            <th>Type</th>
+                            <th>Tip Radius</th>
+                            <th>Insert Grade</th>
+                            <th>Offset</th>
+                            <th>Operation</th>
+                            <th>T</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row">
+                        <td>
+                            <input class="col  hook" name="sub_seq_0" id="seq" type="text" />
+                        </td>
+                        <td>
+                            <input class="col  hook" name="sub_tool_0" id="tool" type="text" />
+                        </td>
+                        <td>
+                            <input class="col  hook" name="sub_type_0" id="type" type="text" />
+                        </td>
+                        <td>
+                            <input class="col  hook" name="sub_tip_rad_0" id="tip_rad" type="text" />
+                        </td>
+                        <td>
+                            <input class="col  hook" name="sub_ins_grade_0" id="ins_grade" type="text" />
+                        </td>
+                        <td>
+                            <input class="col  hook" name="sub_offset_0" id="offset" type="text" />
+                        </td>
+                        <td>
+                            <input class="col  hook" name="sub_op_desc_0" id="op_desc" type="text" />
+                        </td>
+                        <td>
+                            <input class="col  hook" name="sub_t_desc_0" id="t_desc" type="text" />
+                        </td>
+                        <tr>
+                    </tbody>
+                    </table>
+            </div>
+
+        </form>
+    </div>
+    <script src='ipc/formSubmit.js'></script>
+    <script>window.$ = window.jQuery = require('./assets/js/jquery-3.3.1.min.js');</script>
+    <script src='assets/js/materialize-1.0.0-beta.min.js'></script>
+    <script src='assets/js/tableRowBuilderAuto.js'></script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+/* html {
+    line-height: 0;
+} */
+
+td, th {
+    padding: 0px !important;
+    border: 1px solid darkgray;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+p {
+    line-height: 0.7rem;
+}
+
+textarea {
+    height: 5.27rem;
+}
+
+.hook {
+    height: 2.3rem !important;
+    margin: 0px !important;
+    /* border-bottom: 0.5px solid darkgray !important; */
+}
+
+.hook-by {
+    height: 3.1rem !important;
+}
