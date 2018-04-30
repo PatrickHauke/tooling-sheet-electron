@@ -242,9 +242,10 @@
         const { ipcRenderer } = require('electron');
         // When triggered from main process (index.js), do something
         ipcRenderer.on('update-data', (event, arg)=>{
-            arg.forEach(element => {
-              console.log(element.name);
-            });
+            console.log(arg);
+            // arg.forEach(element => {
+            //   console.log(element.name);
+            // });
         });
 
         // function ready(e) {
