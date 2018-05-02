@@ -5,17 +5,32 @@
 td, th {
     padding: 0px !important;
     border: 1px solid black;
+}
+
+th {
+    text-align: center;
+}
+
+td {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
 }
 
-
 p {
-    line-height: 0.7rem;
+    line-height: 0.1rem;
+}
+
+h4 {
+    margin: 1.52rem 0 1.4rem 0 !important;
 }
 
 textarea {
     height: 5.27rem;
+}
+
+input:focus {
+    border-bottom: 1px solid #ff9100 !important;
+    box-shadow: 0 1px 0 0 #ff9100 !important;
 }
 
 .hook {
@@ -35,4 +50,13 @@ textarea {
 
 .datepicker-date-display {
     background-color: #ff9100;
+}
+
+.form-logo {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    top: 0px;
+    left: 10rem;
+    z-index: 1;
 }

@@ -49,7 +49,7 @@ ipcMain.on('update-second-page', (event, arg)=>{
 });
 
 ipcMain.on('final-form-rendered', (event, arg)=>{
-  const pdfPath = path.join(os.tmpdir(), 'pdf-sample.pdf');
+  const pdfPath = path.join(os.tmpdir(), 'tooling-sheet.pdf');
   const renderWindow = BrowserWindow.fromWebContents(event.sender);
 
   renderWindow.webContents.printToPDF({
