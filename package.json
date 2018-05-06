@@ -9,11 +9,13 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "eslint src --color"
+    "lint": "eslint src --color",
+    "wincompile": "electron-forge make --platform=win32"
   },
   "keywords": [],
-  "author": "pat",
-  "license": "MIT",
+  "author": "Patrick Hauke",
+  "site": "patrickhauke.io",
+  "license": "Pending Agreement",
   "config": {
     "forge": {
       "make_targets": {

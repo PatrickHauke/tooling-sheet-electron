@@ -17,7 +17,8 @@ let secondWindow;
 const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    show: false
+    show: false,
+    icon: path.join(__dirname, 'src/assets/icons/precipart.jpg')
   });
 
   mainWindow.loadURL(`file://${__dirname}/setup.html`);
@@ -31,21 +32,26 @@ const createWindow = () => {
     mainWindow = null
   })
 
+  
   secondWindow = new BrowserWindow({
     show: false,
+    icon: path.join(__dirname, 'src/assets/icons/precipart.jpg')
     // parent: mainWindow
   });
 
   secondWindow.loadURL(`file://${__dirname}/render/final.html`);
 
+  secondWindow.on('closed', ()=>{
+    secondWindow = null
+  })
   
 };
 
 ipcMain.on('update-second-page', (event, arg)=>{
   secondWindow.webContents.send('update-data', arg);
-  mainWindow.hide();
-  secondWindow.show();
-  secondWindow.maximize();
+  // mainWindow.hide();
+  // secondWindow.show();
+  // secondWindow.maximize();
 });
 
 ipcMain.on('final-form-rendered', (event, arg)=>{

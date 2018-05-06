@@ -3,7 +3,7 @@ document.getElementById('render').addEventListener('click', () => {
     const spindleData = $('.hook');
     let dataSet = [];
     for(var i = 0; i<spindleData.length; i++){
-        if(spindleData[i].value.length === 0) spindleData[i].value = '&nbsp';
+        if(spindleData[i].value.length === 0) spindleData[i].value = ' ';
         if(spindleData[i].name.startsWith('main')){
             dataSet.push({
                 'name': spindleData[i].name,
@@ -28,6 +28,8 @@ document.getElementById('render').addEventListener('click', () => {
         })
         
     }
+
+    console.log('echo');
 
     // console.log(dataSet);
     // spindleData[0].foreach((data)=>{

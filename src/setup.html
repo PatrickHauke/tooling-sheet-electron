@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>CNC Lathe Setup</title>
     <!-- Materializecss compiled and minified CSS -->
     <link rel="stylesheet" href='assets/css/materialize-1.0.0-beta.min.css'>
     <!--Import Materialize-Stepper CSS (after importing materialize.css) -->
@@ -13,9 +13,9 @@
 </head>
 
 <body>
-    <div class="render">
+    <div class="render" style='zoom: 0.8'>
         <img src='assets/icons/precipart.jpg' class='form-logo'/>
-        <h4 class="light center-align">CNC Lathe Setup</h4>
+        <h4 class="light center-align">CNC Lathe Setup Sheet</h4>
         <form>
             <!-- Form configuration -->
             <!-- <div class="section"> -->
@@ -58,16 +58,16 @@
                     </div>
                     <!-- Center Text Inputs -->
                     <div class="col s4">
-                        <div style='border: 1px solid darkgray;'>
+                        <div style='border: 1px solid black;'>
                             <!-- <label for='work_desc'>Work Description</label> -->
-                            <p>Work Description</p>
+                            <p style='padding-left: 1rem;'>Work Description</p>
                             <textarea rows='4' id='work_desc' name='work_desc' class='hook hook-by'></textarea>
                         </div>
                         <!-- <br>
                         <br> -->
-                        <div style='border: 1px solid darkgray;'>
+                        <div style='border: 1px solid black;'>
                             <!-- <label for="comments_desc">Comments & Suggestions</label> -->
-                            <p>Comments & Suggestions</p>
+                            <p style='padding-left: 1rem;'>Comments & Suggestions</p>
                             <textarea rows='4' name='comments_desc' id="comments_desc" class="hook hook-by"></textarea>
                         </div>
                     </div>
@@ -121,13 +121,13 @@
                         <table id="work_offset" class="work-offset centered">
                             <thead>
                                 <tr>
-                                <th>&nbsp;&nbsp;&nbsp;</th>
-                                <th>G54</th>
-                                <th>G55</th>
-                                <th>G56</th>
-                                <th>G57</th>
-                                <th>G58</th>
-                                <th>G59</th>
+                                    <th>&nbsp;&nbsp;&nbsp;</th>
+                                    <th>Initial Offset</th>
+                                    <th>G54</th>
+                                    <th>G55</th>
+                                    <th>G56</th>
+                                    <th>G57</th>
+                                    <th>G58</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -185,19 +185,18 @@
 
             <!-- Spindle Table -->
             <div class="row">
-                <h6 class="light">Main Spindle</h6>
+                <h6>Main Spindle</h6>
                 <table id="spindle_table" class="spindle-table">
                     <thead>
                         <tr>
-                            <th style='width: 4rem';>Seq</th>
-                            <th style='width: 4rem';>Tool</th>
-                            <th style='width: 22rem';>Type</th>
-                            <th style='width: 6rem';>Tip Radius</th>
-                            <th style='width: 22rem';>Insert Grade</th>
-                            <th style='width: 14rem';>Offset</th>
-                            <th>Operation</th>
-                            <th style='width: 2rem';>T</th>
-                        <!-- <th>Action</th> -->
+                            <th style='width: 3%';>Seq</th>
+                            <th style='width: 5%';>Tool</th>
+                            <th style='width: 20%';>Type</th>
+                            <th style='width: 5%';>Tip Radius</th>
+                            <th style='width: 17%';>Insert Grade</th>
+                            <th style='width: 12%';>Geometric Offset</th>
+                            <th style='width: 36%';>Operation</th>
+                            <th style='width: 2%';>T</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -232,18 +231,18 @@
             </div>
 
             <div class="row">
-                <h6 class="light">Sub Spindle</h6>
+                <h6>Sub Spindle</h6>
                 <table id="subspindle_table" class="spindle-table">
                     <thead>
                         <tr>
-                            <th style='width: 4rem';>Seq</th>
-                            <th style='width: 4rem';>Tool</th>
-                            <th style='width: 22rem';>Type</th>
-                            <th style='width: 6rem';>Tip Radius</th>
-                            <th style='width: 22rem';>Insert Grade</th>
-                            <th style='width: 14rem';>Offset</th>
-                            <th>Operation</th>
-                            <th style='width: 2rem';>T</th>
+                            <th style='width: 3%';>Seq</th>
+                            <th style='width: 5%';>Tool</th>
+                            <th style='width: 20%';>Type</th>
+                            <th style='width: 5%';>Tip Radius</th>
+                            <th style='width: 17%';>Insert Grade</th>
+                            <th style='width: 12%';>Geometric Offset</th>
+                            <th style='width: 36%';>Operation</th>
+                            <th style='width: 2%';>T</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -278,7 +277,7 @@
             </div>
 
             <div class="section">
-                <button class='waves-effect waves-light btn orange accent-3' id='render' type="button">Setup Sheet</button>
+                <button class='waves-effect waves-light btn orange accent-3' id='render' type="button">Print Tooling Sheet</button>
             </div>
         </form>
     </div>
