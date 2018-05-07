@@ -49,6 +49,8 @@ const createWindow = () => {
 
 ipcMain.on('update-second-page', (event, arg)=>{
   secondWindow.webContents.send('update-data', arg);
+  // Uncomment for debug view of rendered pdf
+  secondWindow.webContents.reloadIgnoringCache();
   // mainWindow.hide();
   // secondWindow.show();
   // secondWindow.maximize();
@@ -57,6 +59,8 @@ ipcMain.on('update-second-page', (event, arg)=>{
 ipcMain.on('final-form-rendered', (event, arg)=>{
   const pdfPath = path.join(os.tmpdir(), 'tooling-sheet.pdf');
   const renderWindow = BrowserWindow.fromWebContents(event.sender);
+
+
 
   renderWindow.webContents.printToPDF({
     "marginsType": 1,
