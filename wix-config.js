@@ -15,18 +15,23 @@
 
 // await msiCreator.compile();
 
-var electronInstaller = require('electron-winstaller');
+const electronInstaller = require('electron-winstaller');
+const path = require('path');
+const ico = path.normalize(__dirname + '/src/assets/icons/precipart_64x64.ico');
+console.log(ico);
 
 var settings = {
-    appDirectory: './out/tooling-sheet-electron-win32-x64',
+    appDirectory: './out/CNC-Lathe-Setup-Sheet-win32-x64',
     outputDirectory: './installers',
     authors: 'patrickhauke.io',
-    exe: './tooling-sheet-electron.exe',
-    iconUrl: __dirname + '/src/assets/icons/precipart_64x64.ico',
-    setupIcon: __dirname + '/src/assets/icons/precipart_64x64.ico',
+    exe: './CNC-Lathe-Setup-Sheet.exe',
+    description: "Prototype Tooling Sheet Application",
+    iconUrl: ico,
+    setupIcon: ico,
+    title: 'CNC Lathe Setup Sheet',
     name: 'CNCLatheSetupSheet',
     setupExe: 'cnc-lathe-setup-sheet',
-    setupMsi: 'cnc-lathe-setup-sheet'
+    setupMsi: 'cnc-lathe-setup-sheet-msi'
 };
 
 resultPromise = electronInstaller.createWindowsInstaller(settings);

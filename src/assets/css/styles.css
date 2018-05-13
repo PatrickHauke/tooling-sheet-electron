@@ -12,8 +12,8 @@ th {
 }
 
 td {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding-left: 0.2em !important;
+    padding-right: 0.2rem !important;
     height:1.3rem !important;
 }
 
@@ -58,6 +58,10 @@ input:focus {
     width: 80px;
     height: auto;
     top: 0px;
-    left: 10rem;
+    left: 1rem;
     z-index: 1;
+}
+
+#render {
+    height: 3rem;
 }

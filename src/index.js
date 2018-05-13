@@ -1,13 +1,81 @@
+if (require('electron-squirrel-startup')) process.exit(0); // eslint-disable-line global-requirreturn;
+
 import { app, BrowserWindow, shell } from 'electron';
-// Setup inter-process-communication
-const {ipcMain} = require('electron');
-// Handle creating/removing shortcuts on Windows when installing/uninstalling.
-if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
-  app.quit();
-}
 const path = require('path');
 const fs = require('fs');
 const os = require('os');
+
+// Setup inter-process-communication
+const {ipcMain} = require('electron');
+// Handle creating/removing shortcuts on Windows when installing/uninstalling.
+
+
+if(handleSquirrelEvent()) {
+  process.exit(0);
+}
+
+function handleSquirrelEvent(){
+  //
+  if(process.argv.length === 1){
+    return false;
+  }
+
+  const ChildProcess = require('child_process');
+
+  const appFolder = path.resolve(process.execPath, '..');
+  const rootAtomFolder = path.resolve(appFolder, '..');
+  const updateDotExe = path.resolve(path.join(rootAtomFolder, 'Update.exe'));
+  const exeName = path.basename(process.execPath);
+
+  const spawn = function(command, args) {
+    let spawnedProcess, error;
+
+    try {
+      spawnedProcess = ChildProcess.spawn(command, args, {detached: true});
+    } catch (error) {}
+
+    return spawnedProcess;
+  };
+
+  const spawnUpdate = function(args) {
+    return spawn(updateDotExe, args);
+  };
+
+  const squirrelEvent = process.argv[1];
+  switch (squirrelEvent) {
+    case '--squirrel-install':
+    case '--squirrel-updated':
+      // Optionally do things such as:
+      // - Add your .exe to the PATH
+      // - Write to the registry for things like file associations and
+      //   explorer context menus
+
+      // Install desktop and start menu shortcuts
+      spawnUpdate(['--createShortcut', exeName]);
+
+      setTimeout(app.quit, 1000);
+      return true;
+
+    case '--squirrel-uninstall':
+      // Undo anything you did in the --squirrel-install and
+      // --squirrel-updated handlers
+
+      // Remove desktop and start menu shortcuts
+      spawnUpdate(['--removeShortcut', exeName]);
+
+      setTimeout(app.quit, 1000);
+      return true;
+
+    case '--squirrel-obsolete':
+      // This is called on the outgoing version of your app before
+      // we update to the new version - it's the opposite of
+      // --squirrel-updated
+
+      app.quit();
+      return true;
+  }
+}
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -16,9 +84,10 @@ let secondWindow;
 
 const createWindow = () => {
   // Create the browser window.
+  console.log(__dirname);
   mainWindow = new BrowserWindow({
     show: false,
-    icon: path.join(__dirname, 'src/assets/icons/precipart.jpg')
+    icon: path.join(__dirname, '/assets/icons/precipart.jpg')
   });
 
   mainWindow.loadURL(`file://${__dirname}/setup.html`);
@@ -35,7 +104,7 @@ const createWindow = () => {
   
   secondWindow = new BrowserWindow({
     show: false,
-    icon: path.join(__dirname, 'src/assets/icons/precipart.jpg')
+    icon: path.join(__dirname, '/assets/icons/precipart.jpg')
     // parent: mainWindow
   });
 
@@ -57,7 +126,8 @@ ipcMain.on('update-second-page', (event, arg)=>{
 });
 
 ipcMain.on('final-form-rendered', (event, arg)=>{
-  const pdfPath = path.join(os.tmpdir(), 'tooling-sheet.pdf');
+  // console.log(JSON.stringify(event.sender));
+  const pdfPath = path.join(os.tmpdir(), `${arg}.pdf`);
   const renderWindow = BrowserWindow.fromWebContents(event.sender);
 
 
@@ -68,7 +138,7 @@ ipcMain.on('final-form-rendered', (event, arg)=>{
     "landscape": true
   }, (err, data)=>{
     if(err) return console.log(err.message);
-
+    console.log(data);
     fs.writeFile(pdfPath, data, function(err) {
       if(err) return console.log(err.message);
       shell.openExternal('file://'+ pdfPath);

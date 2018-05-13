@@ -1,6 +1,6 @@
 {
-  "name": "CNC Lathe Setup Sheet",
-  "productName": "CNC Lathe Setup Sheet",
+  "name": "CNC-Lathe-Setup-Sheet",
+  "productName": "CNC-Lathe-Setup-Sheet",
   "version": "1.0.0",
   "description": "Prototype Tooling Sheet Application",
   "main": "src/index.js",
