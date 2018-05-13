@@ -87,7 +87,7 @@ const createWindow = () => {
   console.log(__dirname);
   mainWindow = new BrowserWindow({
     show: false,
-    icon: path.join(__dirname, '/assets/icons/precipart.jpg')
+    icon: path.join(__dirname, '/assets/icons/precipart_64x64.ico')
   });
 
   mainWindow.loadURL(`file://${__dirname}/setup.html`);
@@ -104,7 +104,7 @@ const createWindow = () => {
   
   secondWindow = new BrowserWindow({
     show: false,
-    icon: path.join(__dirname, '/assets/icons/precipart.jpg')
+    icon: path.join(__dirname, '/assets/icons/precipart_64x64.ico')
     // parent: mainWindow
   });
 

@@ -30,8 +30,8 @@ var settings = {
     setupIcon: ico,
     title: 'CNC Lathe Setup Sheet',
     name: 'CNCLatheSetupSheet',
-    setupExe: 'cnc-lathe-setup-sheet',
-    setupMsi: 'cnc-lathe-setup-sheet-msi'
+    setupExe: 'cnc-lathe-setup-sheet.exe',
+    // setupMsi: 'cnc-lathe-setup-sheet.msi'
 };
 
 resultPromise = electronInstaller.createWindowsInstaller(settings);

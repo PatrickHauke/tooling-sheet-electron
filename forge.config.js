@@ -12,7 +12,9 @@ module.exports = {
         "owner": "",
         "name": ""
     },
-    "electronPackageConfig": {
-        "icon": path.resolve(__dirname + "src/assets/icons/precipart_64x64.ico")
+    "electronPackagerConfig": {
+        "icon": "./src/assets/icons/precipart_64x64.ico",
+        "asar": true,
+        "electronVersion": "1.8.2"
     }
 }
